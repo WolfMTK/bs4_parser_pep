@@ -45,9 +45,9 @@ def pep(session) -> list[str]:
                        f'Статус в карточку:{pep_status}\n'
                        f'Ожидаемые статуса: {expected_status}')
             logging.warning(message)
-    results.append(
-        (*status_dict.items(), ('Total', sum(status_dict.values())))
-    )
+    results = [('Статус', 'Количество'),
+               *status_dict.items(),
+               ('Total', sum(status_dict.values()))]
     return results
 
 
